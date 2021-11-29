@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>main</title>
+<meta charset="utf-8">
+<style>
+    *{ margin:0; padding:0; }
+    li{
+        list-style: none;
+    }
+    #header {
+        border:3px solid blue;
+        display: flex;
+        padding:0 20px;
+        height:55px;
+    }
+    .logo, .search_box, .menu_box{
+        width:33.3%;
+        border:1px solid red;
+        line-height: 55px;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu_box{
+        justify-content: flex-end;
+    }
+    .icon_img{
+        margin-top:20px;
+        padding: 0 10px;
+        width:30px;
+        height:30px;
+    }
+</style>
+<script>
+
+</script>
+</head>
+<body>
+    <!--        wrap           -->
+    <div id="wrap">
+    <!--        header           -->
+        <div id="header" style="height:55px;">
+            <div class="logo">
+                <a href="#">
+                    <img src="/img/logo.png" style="width:103px; height:30px; display: flex; align-items: center;">
+                </a>
+            </div>
+            <div class="search_box">
+                <input aria-label="입력 검색" autocapitalize="none" placeholder="검색" type="text" value="">
+                <div aria-hidden="false" class="search_list"></div>
+            </div>
+            <div class="menu_box">
+                <ul class="menu" style="display: flex;">
+                    <li>
+                        <a href="#">
+                            <img src="/img/home.jpg" class="icon_img">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="/img/direct.jpg" class="icon_img">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="/img/plus.jpg" class="icon_img">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="/img/compass.png" class="icon_img">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="/img/good.jpg" class="icon_img">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--        section           -->
+        <div id="section">
+            <h2>섹션</h2>
+        </div>
+        <!--        footer           -->
+    </div>
+</body>
+</html>
