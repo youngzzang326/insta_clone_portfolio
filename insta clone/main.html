@@ -16,8 +16,9 @@
     a:link, a:visited{
         color:#262626;
     }
+
     #header {
-        border:3px solid black;
+        /* border:3px solid black; */
         display: flex;
         justify-content: center;
         height:55px;
@@ -29,7 +30,7 @@
     }
     .logo, .search_box, .menu_box{
         width:33.3%;
-        border:1px solid red;
+        /* border:1px solid red; */
         line-height: 55px;
         display: flex;
         align-items: center;
@@ -49,10 +50,21 @@
         height:30px;
     }
 
+    .dropdown-menu{
+        border-radius: 0;
+    }
+    /* 화살표 제거 */
+    .dropdown-toggle::after { border: none; }
+    /* 마우스오버시 팝업 */
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        /* 팝업메뉴가 닫히지 않도록 */
+        margin-top: 0; 
+    }
 
     /*          section              */
     #section{
-        /* border:5px solid cyan; */
+        border:5px solid cyan;
         display: flex;
         justify-content: center;
         margin:0px 85px;
@@ -62,20 +74,23 @@
     /*          section left         */
     #section_left{
         margin:0 28px 0px 0;
+        /* border:10px solid green; */
     }
     /*          story_fid          */
     #story_box{
-        border:5px solid black;
+        border:1px solid #cfcfcf;
         width:614px; height:118px;
+        margin-bottom:24px;
     }
     #story_list{
         display: flex;
     }
     #story_list li{
-        border:3px solid blue;
+        /* border:3px solid blue; */
         width:100px;
+        align-items: center;
     }
-    .story_img img{
+    .story_img{
         width:66px;
     }
     .story_user_id {
@@ -92,22 +107,31 @@
 
     /*      fid          */
     .fid_top{
-        border:1px solid blue;
+        border:1px solid #cfcfcf;
         display: flex;
         height:60px;
     }
     header{
-        border:1px solid red;
         width:566px;
+    }
+    .fid_id a{
+        font-weight: bold;
+    }
+    .fid_id a:hover{
+        border-bottom:1px solid #262626;
+    }
+
+    .fid_middle img{
+        height:614px;
     }
 
 
     /*       section right            */
     #section_right{
-        /* border:7px solid purple; */
+        /* border:3px solid cyan; */
+        top: 0px;
         position: sticky;
         position: -webkit-sticky; 
-        top: 0px;
         width:293px;
         height:600px;
     }
@@ -151,255 +175,314 @@
         color:#828282;
     }
 
+    .nav_list{
+        display: flex;
+        padding:6px 16px 8px; 
+    }
+    .nav_list button{
+        padding:8px;
+        background-color: white;
+    }
+    .nav_list button:hover{
+        border:1px solid red;
+    }
+    .nav_list img{
+        width:24px;
+    }
+
+
 </style>
 <script>
 
 </script>
 </head>
 <body>
-    <!--        wrap           -->
-    <div id="wrap">
+<!--        wrap           -->
+<div id="wrap">
     <!--        header           -->
-        <div id="header" style="height:55px;">
-            <div class="header_box">
-                <div class="logo">
-                    <a href="#">
-                        <img src="/img/logo.png" style="width:103px; height:30px; display: flex; align-items: center;">
-                    </a>
-                </div>
-                <div class="search_box" >
-                    <input type="text" aria-label="입력 검색" autocapitalize="none" placeholder="검색" type="text" value="">
-                    <div aria-hidden="false" class="search_list"></div>
-                </div>
-                <div class="menu_box">
-                    <ul class="menu" style="display: flex;">
-                        <li>
-                            <a href="#">
-                                <img src="/img/home.jpg" class="icon_img">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/img/direct.jpg" class="icon_img">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/img/plus.jpg" class="icon_img">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/img/compass.png" class="icon_img">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/img/good.jpg" class="icon_img">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+    <div id="header" style="height:55px;">
+        <div class="header_box">
+            <div class="logo">
+                <a href="#">
+                    <img src="/img/logo.png" style="width:103px; height:30px; display: flex; align-items: center;">
+                </a>
             </div>
-        </div>
-        <!--        section           -->
-        <div id="section" >
-            <div id="section_left">
-                <div id="story_box">
-                    <ul id="story_list" class="owl-carousel owl-theme">
-                        <li>
-                            <button>
-                                <div class="story_img"><img src="/img/story.jpg"></div>
-                                <div class="story_user_id">
-                                    london_travel_pic
-                                </div>
-                            </button>
-                        </li>
-                        <li>
-                            <button>
-                                <div class="story_img"><img src="/img/story2.jpg"></div>
-                                <div class="story_user_id">
-                                    user_yong
-                                </div>
-                            </button>
-                        </li>
-                        <li>
-                            <button>
-                                <div class="story_img"><img src="/img/story3.jpg"></div>
-                                <div class="story_user_id">
-                                    none_named_park
-                                </div>
-                            </button>
-                        </li>
-                        <li>
-                            <button>
-                                <div class="story_img"><img src="/img/story4.jpg"></div>
-                                <div class="story_user_id">
-                                    uniplovelovelove
-                                </div>
-                            </button>
-                        </li>
-                        <li>
-                            <button>
-                                <div class="story_img"><img src="/img/story5.jpg"></div>
-                                <div class="story_user_id">
-                                    epickhighAlbum
-                                </div>
-                            </button>
-                        </li>
-                        <li>
-                            <button>
-                                <div class="story_img"><img src="/img/story6.jpg"></div>
-                                <div class="story_user_id">
-                                    bada_seaofsea
-                                </div>
-                            </button>
-                        </li>
-                        <li>
-                            <button>
-                                <div class="story_img"><img src="/img/story7.jpg"></div>
-                                <div class="story_user_id">
-                                    smileemotion309
-                                </div>
-                            </button>
-                        </li>
-                        <li>
-                            <button>
-                                <div class="story_img"><img src="/img/story2.jpg"></div>
-                                <div class="story_user_id">
-                                    dongrami_charac
-                                </div>
-                            </button>
-                        </li>
-                        <li>
-                            <button>
-                                <div class="story_img"><img src="/img/story2.jpg"></div>
-                                <div class="story_user_id">
-                                    dongrami_charac
-                                </div>
-                            </button>
-                        </li>
-                        <li>
-                            <button>
-                                <div class="story_img"><img src="/img/story5.jpg"></div>
-                                <div class="story_user_id">
-                                    epickhighAlbum
-                                </div>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-                <!--        footer           -->
-                <div id="fid_box" style="width:614px; height:1086px; border:1px solid blue;">
-                    <div class="fid_top">
-                        <header>
-                            <img src="/img/header.jpg" style="width: 32px;">
-                            <span class="fid_id" >
-                                <a href="https://www.instagram.com/kream.co.kr/">kream.co.kr</a>
-                            </span>
-                        </header>
-                        <div>
-                            <img src="/img/header_point.jpg" style="width:59px;">
-                        </div>
-                    </div>
-                </div>
+            <div class="search_box" >
+                <input type="text" aria-label="입력 검색" autocapitalize="none" placeholder="검색" type="text" value="">
+                <div aria-hidden="false" class="search_list"></div>
             </div>
-            <div id="section_right">
-                <div id="myid_box">
-                    <div class="my_picture" style="width:64px;">
-                        <div><img src="/img/my_img.jpg" style="width:56px;"></div>
-                    </div>
-                    <div class="my_intro">
-                        <div class="user_id">
-                            <a href=# style="font-size: 15px;">youngzzang326</a>
-                        </div>
-                        <div class="user_name">나능햐 녕땽</div>
-                    </div>
-                    <button class="change_btn">
-                        전환
-                    </button>
-                </div>
-                <div id="recommend">
-                    <div class="recom01">회원님을 위한 추천</div>
-                    <a href="#">모두보기</a>
-                </div>
-                <div id="myid_box">
-                    <div class="my_picture" style="width:64px;">
-                        <div><img src="/img/my_img.jpg" style="width:56px;"></div>
-                    </div>
-                    <div class="my_intro">
-                        <div class="user_id">
-                            <a href=# style="font-size: 15px;">youngzzang326</a>
-                        </div>
-                        <div class="user_name">나능햐 녕땽</div>
-                    </div>
-                    <button class="change_btn">
-                        전환
-                    </button>
-                </div>
-                <div id="myid_box">
-                    <div class="my_picture" style="width:64px;">
-                        <div><img src="/img/my_img.jpg" style="width:56px;"></div>
-                    </div>
-                    <div class="my_intro">
-                        <div class="user_id">
-                            <a href=# style="font-size: 15px;">youngzzang326</a>
-                        </div>
-                        <div class="user_name">나능햐 녕땽</div>
-                    </div>
-                    <button class="change_btn">
-                        전환
-                    </button>
-                </div>
-                <div id="myid_box">
-                    <div class="my_picture" style="width:64px;">
-                        <div><img src="/img/my_img.jpg" style="width:56px;"></div>
-                    </div>
-                    <div class="my_intro">
-                        <div class="user_id">
-                            <a href=# style="font-size: 15px;">youngzzang326</a>
-                        </div>
-                        <div class="user_name">나능햐 녕땽</div>
-                    </div>
-                    <button class="change_btn">
-                        전환
-                    </button>
-                </div>
-                <div id="myid_box">
-                    <div class="my_picture" style="width:64px;">
-                        <div><img src="/img/my_img.jpg" style="width:56px;"></div>
-                    </div>
-                    <div class="my_intro">
-                        <div class="user_id">
-                            <a href=# style="font-size: 15px;">youngzzang326</a>
-                        </div>
-                        <div class="user_name">나능햐 녕땽</div>
-                    </div>
-                    <button class="change_btn">
-                        전환
-                    </button>
+            <div class="menu_box">
+                <ul class="menu" style="display: flex;">
+                    <li>
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="/img/home.jpg" class="icon_img">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="/img/direct.jpg" class="icon_img">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="/img/plus.jpg" class="icon_img">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="/img/compass.png" class="icon_img">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="/img/good.jpg" class="icon_img">
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="/img/my_img.jpg" class="icon_img" >
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-    <script src="js/jquery-2.2.4.min.js"></script>
-    <script src="js/owl.carousel.js"></script>
-    <script src="js/owl.autoplay.js"></script>
-    <script src="js/owl.navigation.js"></script>
-    <script>
-        $(function(){
-            $('.owl-carousel').owlCarousel({
-                items: 4, //슬라이드 갯수
-                margin: 10, //마진
-                center: true, //가운데 정렬
-                loop: true, //되감기
-                nav: true, //바로가기
-                navText: ['Prev','Next'], //바로가기 문구
-                // autoplay: true, //자동재생
-                autoplayTimeout: 3000, //자동재생 시간
-                autoplayHoverPause: false, //자동재생 멈춤
-                autopalySpeed: 500 //자동재생 속도
-            });
+        <!--        section           -->
+    <div id="section" >
+        <div id="section_left">
+            <div id="story_box">
+                <ul id="story_list" class="owl-carousel owl-theme">
+                    <li>
+                        <button>
+                            <div class="story_img"><img src="/img/story.jpg"></div>
+                            <div class="story_user_id">
+                                london_travel_pic
+                            </div>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <div class="story_img"><img src="/img/story2.jpg"></div>
+                            <div class="story_user_id">
+                                user_yong
+                            </div>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <div class="story_img"><img src="/img/story3.jpg"></div>
+                            <div class="story_user_id">
+                                none_named_park
+                            </div>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <div class="story_img"><img src="/img/story4.jpg"></div>
+                            <div class="story_user_id">
+                                uniplovelovelove
+                            </div>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <div class="story_img"><img src="/img/story5.jpg"></div>
+                            <div class="story_user_id">
+                                epickhighAlbum
+                            </div>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <div class="story_img"><img src="/img/story6.jpg"></div>
+                            <div class="story_user_id">
+                                bada_seaofsea
+                            </div>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <div class="story_img"><img src="/img/story7.jpg"></div>
+                            <div class="story_user_id">
+                                smileemotion309
+                            </div>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <div class="story_img"><img src="/img/story2.jpg"></div>
+                            <div class="story_user_id">
+                                dongrami_charac
+                            </div>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <div class="story_img"><img src="/img/story2.jpg"></div>
+                            <div class="story_user_id">
+                                dongrami_charac
+                            </div>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <div class="story_img"><img src="/img/story5.jpg"></div>
+                            <div class="story_user_id">
+                                epickhighAlbum
+                            </div>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="fid_box" style="width:614px; height:1086px; border:1px solid #cfcfcf;">
+                <div class="fid_top">
+                    <header>
+                        <img src="/img/header.jpg" style="width: 32px;">
+                        <span class="fid_id" >
+                            <a href="https://www.instagram.com/kream.co.kr/">kream.co.kr</a>
+                        </span>
+                    </header>
+                    <div>
+                        <img src="/img/header_point.jpg" style="width:59px;">
+                    </div>
+                </div>
+                <div class="fid_middle">
+                    <img src="/img/fid_main.png">
+                </div>
+                <div class="fid_nav">
+                    <div class="nav_list">
+                        <span>
+                            <button><img src="/img/good.jpg"></button>
+                        </span>
+                        <span>
+                            <button><img src="/img/comment.jpg"></button>
+                        </span>
+                        <span>
+                            <button><img src="/img/direct.jpg"></button>
+                        </span>
+                    </div>
+                    <div class="like_box">
+                        <span>좋아요 123,456개</span>
+                    </div>
+                    <div class="user_id">sneakers_shop</div>
+                    <div class="fid_comment">
+                        <div id="toggleDiv">This is toggle div</div>
+                        <a href="#" onclick="toggle_div('toggleDiv');">more</a>
+                    </div>
+                    <div class="comment_box">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section_right">
+            <div id="myid_box">
+                <div class="my_picture" style="width:64px;">
+                    <div><img src="/img/my_img.jpg" style="width:56px;"></div>
+                </div>
+                <div class="my_intro">
+                    <div class="user_id">
+                        <a href=# style="font-size: 15px;">youngzzang326</a>
+                    </div>
+                    <div class="user_name">나능햐 녕땽</div>
+                </div>
+                <button class="change_btn">
+                    전환
+                </button>
+            </div>
+            <div id="recommend">
+                <div class="recom01">회원님을 위한 추천</div>
+                <a href="#">모두보기</a>
+            </div>
+            <div id="myid_box">
+                <div class="my_picture" style="width:64px;">
+                    <div><img src="/img/my_img.jpg" style="width:56px;"></div>
+                </div>
+                <div class="my_intro">
+                    <div class="user_id">
+                        <a href=# style="font-size: 15px;">youngzzang326</a>
+                    </div>
+                    <div class="user_name">나능햐 녕땽</div>
+                </div>
+                <button class="change_btn">
+                    전환
+                </button>
+            </div>
+            <div id="myid_box">
+                <div class="my_picture" style="width:64px;">
+                    <div><img src="/img/my_img.jpg" style="width:56px;"></div>
+                </div>
+                <div class="my_intro">
+                    <div class="user_id">
+                        <a href=# style="font-size: 15px;">youngzzang326</a>
+                    </div>
+                    <div class="user_name">나능햐 녕땽</div>
+                </div>
+                <button class="change_btn">
+                    전환
+                </button>
+            </div>
+            <div id="myid_box">
+                <div class="my_picture" style="width:64px;">
+                    <div><img src="/img/my_img.jpg" style="width:56px;"></div>
+                </div>
+                <div class="my_intro">
+                    <div class="user_id">
+                        <a href=# style="font-size: 15px;">youngzzang326</a>
+                    </div>
+                    <div class="user_name">나능햐 녕땽</div>
+                </div>
+                <button class="change_btn">
+                    전환
+                </button>
+            </div>
+            <div id="myid_box">
+                <div class="my_picture" style="width:64px;">
+                    <div><img src="/img/my_img.jpg" style="width:56px;"></div>
+                </div>
+                <div class="my_intro">
+                    <div class="user_id">
+                        <a href=# style="font-size: 15px;">youngzzang326</a>
+                    </div>
+                    <div class="user_name">나능햐 녕땽</div>
+                </div>
+                <button class="change_btn">
+                    전환
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/owl.autoplay.js"></script>
+<script src="js/owl.navigation.js"></script>
+<script src="loadHTML.js"></script>
+<script src="jquery-3.5.1.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    function toggle_div(id) {
+        var e = document.getElementById(id);
+        e.style.display = ((e.style.display!='none') ? 'none' : 'block');
+    }
+    $(function(){
+        $('.owl-carousel').owlCarousel({
+            items: 4, //슬라이드 갯수
+            margin: 10, //마진
+            center: true, //가운데 정렬
+            loop: true, //되감기
+            nav: true, //바로가기
+            navText: ['Prev','Next'], //바로가기 문구
+            // autoplay: true, //자동재생
+            autoplayTimeout: 3000, //자동재생 시간
+            autoplayHoverPause: false, //자동재생 멈춤
+            autopalySpeed: 500 //자동재생 속도
         });
-    </script>
+    });
+</script>
 </body>
 </html>
