@@ -1,26 +1,107 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title></title>
-<style>
-    .yellow_bg{
-        background-color: yellow;
-    }
-</style>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" 
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<body>
+<html lang="en">
+    <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>slick | slide</title> 
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> 
+    <style>/* 임시 삽입: 확인용 */ .slick-sample{width: 100%;height: 200px;} .slick-sample .slick-list{height: 100%;} 
+    </style> 
+    </head> 
+    <body> 
+        <ul class="responsive">
+            <li>
+                <div class="story_img"><img src="/img/story.jpg"></div>
+                <div class="story_user_id">
+                    london_travel_pic
+                </div>
+            </li>
+            <li>
+                <div class="story_img"><img src="/img/story2.jpg"></div>
+                <div class="story_user_id">
+                    user_yong
+                </div>
+            </li>
+            <li>
+                <div class="story_img"><img src="/img/story3.jpg"></div>
+                <div class="story_user_id">
+                    none_named_park
+                </div>
+            </li>
+            <li>
+                <div class="story_img"><img src="/img/story4.jpg"></div>
+                <div class="story_user_id">
+                    uniplovelovelove
+                </div>
+            </li>
+            <li>
+                <div class="story_img"><img src="/img/story5.jpg"></div>
+                <div class="story_user_id">
+                    epickhighAlbum
+                </div>
+            </li>
+            <li>
+                <div class="story_img"><img src="/img/story6.jpg"></div>
+                <div class="story_user_id">
+                    bada_seaofsea
+                </div>
+            </li>
+            <li>
+                <div class="story_img"><img src="/img/story7.jpg"></div>
+                <div class="story_user_id">
+                    smileemotion309
+                </div>
+            </li>
+            <li>
+                <div class="story_img"><img src="/img/story2.jpg"></div>
+                <div class="story_user_id">
+                    dongrami_charac
+                </div>
+            </li>
+            <li>
+                <div class="story_img"><img src="/img/story5.jpg"></div>
+                <div class="story_user_id">
+                    epickhighAlbum
+                </div>
+            </li>
+        </ul>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script> 
+            $(document).ready(function(){
+                $('.slick-sample').slick({ 
+                    dots: true
+                }); 
+            }); 
 
-    <h4 id="test">안녕하세요</h4>
 
-    <script>
-        // document.querySelector('#test');
-        // document.getElementById('test').innerHTML = '???';
-
-        $('#test').addClass('yellow_bg');
-    </script>
-
-
-
-</body>
+            $('.responsive').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 8,
+                slidesToScroll: 8,
+                responsive: [
+                    {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 8,
+                        slidesToScroll: 8,
+                        infinite: true,
+                        dots: true
+                    }
+                    },
+                    {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 5,
+                        slidesToScroll: 5,
+                        infinite: true,
+                        dots: true
+                    }
+                    },
+                ]
+                });
+            
+        </script> 
+    </body>
 </html>
+
