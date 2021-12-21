@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>slick | slide</title> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    button{ position:absolute; top:50%; left:50%;
+    width:120px; height:30px; margin-top:-15px; margin-left:-60px;
+    line-height:15px; cursor:pointer;
+    }
+
+    .modal{
+        border:1px solid yellow;
+        position: absolute;
+        width:100%;
+        height:100%;
+        background-color: rgb(0,0,0,0.8);
+        display: none;
+    }
+    .modal_content{
+        border:3px solid green;
+        width:1000px; height:600px;
+        line-height: 600px;
+        margin: 0 auto;
+        background:#fff;
+        position:relative;
+        cursor:pointer;
+        display: flex;
+    }
+    .content_left{
+        border:2px solid blue;
+        max-height: 598px;
+        max-width: 504.169px; 
+    }
+    .content_left img{
+        overflow: hidden;
+        width:100%;
+        height:100%;
+        object-fit: cover;
+    }
+    .content_right{
+        max-height: 598px;
+        max-width: 504.169px; 
+    }
+
+</style> 
+</head> 
+<body>
+    <button>모달창</button>
+
+    <div class="modal">
+        <div class="modal_content">
+            <div class="content_left" style="max-height: 598px; max-width: 504.169px; ">
+                <img src="img/fid01_1.jpeg">
+            </div>
+            <div class="content_right" style="max-height: 598px; max-width: 504.169px; ">
+                <div style="border-bottom: 1px solid #8e8e8e;">
+                    <img src="img/my_img.jpg" style="width:40px;">
+                    <span>youngzzang326</span>
+                    <div>
+                        asdf
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+$(function(){ 
+
+    $("button").click(function(){
+    $(".modal").fadeIn();
+    });
+
+    $(".modal_content").click(function(){
+    $(".modal").fadeOut();
+    });
+
+});
+</script>
+</html>

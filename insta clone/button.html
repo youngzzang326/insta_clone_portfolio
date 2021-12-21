@@ -3,6 +3,7 @@
 <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <title>slick | slide</title> 
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 <style>
 .modal_wrap{
         display: none;
@@ -67,6 +68,8 @@
         justify-content: center;
         text-align: center;
         margin:0 auto;
+        cursor: pointer;
+        font-size: 15px;
     }
     .red_btn{
         color:red;
@@ -74,19 +77,87 @@
         border-bottom: 1px solid #c2c2c2 !important;
     }
     .black_btn{
-        font-size: 14px;
         border-bottom: 1px solid #c2c2c2 !important;
     }
+
+
+    .imgList {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.imgC p {
+	text-align: center;
+}
+
+.modal {
+	display: none;
+	z-index: 500;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal button {
+	position: absolute;
+	top: 3rem;
+	right: 3rem;
+	background: transparent;
+	border: 0;
+	color: #ffffff;
+	font-size: 3rem;
+}
+
+.modalBox {
+	position: relative;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -20%);
+	background-color: #ffffff;
+	width: 30%;
+	height: 30%;
+	text-align: center;
+}
+
+.modalBox img {
+	width: 100%;
+}
+
+.modalBox p {
+	color: #ffffff;
+	background-color: #000;
+	font-size: 2rem;
+	padding: .2rem;
+}
+.box{
+margin: 10px;
+float: left;
+width: 100px;
+height: 50px;
+background-color: blue;
+border: solid 1px red;
+}
+.myClickState {
+  border-color: lime;
+}
+
 
 </style> 
 </head> 
 <body> 
     <button type='button' id="option_btn">
-        <img src="/img/header_point.jpg">
+        <img src="/img/fid01_1.jpeg" style="border:1px solid red; width:59px;">
     </button>
     <div class="black_bg"></div>
     <div class="modal_wrap">
-        <div class="modal_close"><a href="#">close</a></div>
+        <div class="modal_close">
+            <a href="#">close</a>
+        </div>
         <div class="button_box">
             <button class="red_btn" tabindex="0">신고</button>
             <button class="red_btn" tabindex="0">팔로우 취소</button>
@@ -95,10 +166,104 @@
             <button class="black_btn" tabindex="0">퍼가기</button>
             <button class="black_btn" tabindex="0" style="border:none !important;">취소</button>
         </div>
-    <div>
-    
-    
+    </div>
+
+    <button id="turn-up"><p>팔로우</p></button>
+
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <!-- 클릭할 이미지 리스트 -->
+	<div class="imgList">
+		<div class="imgC">
+			<img src="https://postfiles.pstatic.net/MjAyMDA4MTFfMTkg/MDAxNTk3MTA4MDYwNzI1.tKQ82JkGgEryOZb2EBQ25zNqBy7JBJW_SOq_V8dDLqog.GCoEolJWAvNKDRXY56z7W7YLnaCTosFm_QAng_xFG_cg.PNG.widrn1010/Untitled-1_0002_Layer-1.png?type=w966" alt="모달할 이미지">
+			<p>이미지 1</p>
+		</div>
+		<div class="imgC">
+			<img src="https://postfiles.pstatic.net/MjAyMDA4MTFfODMg/MDAxNTk3MTA4MDYwNzI5.Jrzof9A1bPnjtaYcQ68x8QwnKLg20qRFOo4g7qy8H7og.SejY6xcfRInLXvg2nMhbcQ_vNHZje9IByJhrwUURATYg.PNG.widrn1010/Untitled-1_0001_Layer-2.png?type=w966" alt="모달할 이미지">
+			<p>이미지 2</p>
+		</div>
+		<div class="imgC">
+			<img src="https://postfiles.pstatic.net/MjAyMDA4MTFfNTAg/MDAxNTk3MTA4MDYwNzI1.3d57fTVreYs1nwnnIwab3Q3fl6lgcFwXj7ptb-gWHrMg.Mc15l9IS78ywBwZGih5bsgiyvBsPIU1HTl-dX8m4jQMg.PNG.widrn1010/Untitled-1_0000_Layer-3.png?type=w966" alt="모달할 이미지">
+			<p>이미지 3</p>
+		</div>
+	</div>
+
+	<!-- 팝업 될 곳 -->
+	<div class="modal">
+		<button>&times;</button>
+		<div class="modalBox">
+			<img src="" alt="">
+			<p></p>
+		</div>
+	</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 <script>
+
+    $('.box').on('click', function(e){
+    e.preventDefault();
+    $(this).css('border-color', 'lime');
+    });
+    
+    $('.box').on('click', function(e){
+        e.preventDefault();
+        $(this).toggleClass('myClickState');
+    });
+
+
+    $(function(){
+// 	이미지 클릭시 해당 이미지 모달
+	$(".imgC").click(function(){
+		$(".modal").show();
+		// 해당 이미지 가겨오기
+		var imgSrc = $(this).children("img").attr("src");
+		var imgAlt = $(this).children("img").attr("alt");
+		$(".modalBox img").attr("src", imgSrc);
+		$(".modalBox img").attr("alt", imgAlt);
+		
+		// 해당 이미지 텍스트 가져오기
+		var imgTit =  $(this).children("p").text();
+		$(".modalBox p").text(imgTit);
+		
+   // 해당 이미지에 alt값을 가져와 제목으로
+		//$(".modalBox p").text(imgAlt);
+	});
+	
+	//.modal안에 button을 클릭하면 .modal닫기
+	$(".modal button").click(function(){
+		$(".modal").hide();
+	});
+	
+	//.modal밖에 클릭시 닫힘
+    $(".modal").click(function (e) {
+            if (e.target.className != "modal") {
+            return false;
+            } else {
+            $(".modal").hide();
+            }
+        });
+    });
+
+
+
+    var btn = document.getElementById('turn-up');
+    var txt = document.querySelector('p');
+
+    btn.addEventListener('click', updateBtn);
+
+    function updateBtn() {
+    if (btn.value === '팔로우') {
+        btn.value = 'following';
+        txt.textContent = '팔로우';
+    } else {
+        btn.value = '팔로우';
+        txt.textContent = 'following';
+    }
+    }
+
     window.onload = function() {
         
         function onClick() {
@@ -114,6 +279,7 @@
         document.querySelector('.modal_close').addEventListener('click', offClick);
 
         };
+
 
 
 
